@@ -1,4 +1,4 @@
-package com.phoen1x.culturaldelightpatch.mixin.mod;
+package com.phoen1x.culturaldelightpatch.mixin;
 
 import com.baisylia.culturaldelights.CulturalDelights;
 import com.baisylia.culturaldelights.block.custom.*;

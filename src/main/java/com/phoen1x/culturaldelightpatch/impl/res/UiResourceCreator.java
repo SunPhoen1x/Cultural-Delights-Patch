@@ -34,6 +34,8 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 
+import static net.minecraft.screen.ScreenTexts.space;
+
 public class UiResourceCreator {
     public static final String MOD_ID = "culturaldelightspatch";
     public static final String BASE_MODEL = "minecraft:item/generated";
@@ -156,12 +158,14 @@ public class UiResourceCreator {
     public static TextPair polydexBackground(String path) {
         var c = character++;
         var d = character++;
+        char shift = character++;
+        SPACES.put(shift, -1);
 
         FONT_TEXTURES.add(new FontTexture(CulturalDelightsPatch.id("sgui/polydex/" + path), -4, 128, new char[][]{{c}, {d}}));
 
         return new TextPair(
-                Text.literal(Character.toString(c)).setStyle(STYLE),
-                Text.literal(Character.toString(d)).setStyle(STYLE)
+                Text.literal("" + shift + c).setStyle(STYLE),
+                Text.literal("" + shift + d).setStyle(STYLE)
         );
     }
 
@@ -177,7 +181,7 @@ public class UiResourceCreator {
         builder.append(c);
         builder.append(CHEST_SPACE1);
 
-        FONT_TEXTURES.add(new FontTexture(CulturalDelightsPatch.id("sgui/" + path), 12, 256, new char[][]{{c}}));
+        FONT_TEXTURES.add(new FontTexture(CulturalDelightsPatch.id("sgui/" + path), 13, 256, new char[][]{{c}}));
         var baseText = Text.literal(builder.toString()).setStyle(STYLE);
         return (text) -> Text.empty().append(baseText).append(text);
     }

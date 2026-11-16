@@ -3,8 +3,7 @@
   "package": "com.phoen1x.culturaldelightpatch.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "mod.CulturalDelightsMixin",
-    "mod.CulturalDelightsCornBlockMixin",
+    "CulturalDelightsMixin",
     "ServerPlayerEntityMixin"
   ],
   "injectors": {
